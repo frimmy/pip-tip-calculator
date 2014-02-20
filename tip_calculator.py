@@ -1,8 +1,27 @@
-import sys as s 
+from optparse import OptionParser #import the OptionParser object from this module
 
-meal = float(s.argv[1])
-tax = float(s.argv[2])
-tip = float(s.argv[3])
+parser = OptionParser()
+
+parser.add_option("-m", "--meal",
+	dest="meal", help="your meal cost",
+	type="float")
+
+parser.add_option("-x", "--tax",
+	dest="tax", help="the tax rate",
+	type="float")
+
+parser.add_option("-p", "--tip",
+	dest="tip", help="the percentage to tip",
+	default=.15, type="float")
+
+(options, args) = parser.parse_args()
+
+if not(options.meal and options.tax):
+	parser.error("You need to enter a correct value for the meal and/or tax rate!")
+
+meal = options.meal
+tax = options.tax
+tip = options.tip
 
 tax_value = meal*tax
 meal_with_tax = meal + tax_value
