@@ -1,0 +1,8 @@
+tip_calculator_Handle_Exceptions TODO:
+  ✔ Don’t create all your functions from scratch. Import the calculate_rate and calculate_meal_costs functions from this Gist. You’ll need to download the Gist and store it in the same folder as your script for this project. @done (14-03-16 14:57)
+ ✔ Get initial user supplied parameters at run time using sys.argv @done (14-03-16 14:57)
+ ✔ If the user inputs a string for meal value at run time, the script should intercept the ValueError snd provide the user with some informative feedback (for instance, "Sorry, you must supply numbers for all input parameters to this script. Try again."). Then it should prompt the user to try inputting the parameters again, this time using raw_input(). @done (14-03-16 16:05)
+ ✔ Initially, your script should use sys.argv to get the values for meal base cost, tip percentage, and tax percentage. If recoverable errors get thrown, it should use raw input to get new user inputs. @done (14-03-16 16:06)
+ ✔ Your script should print the amount you need to pay for the meal with tax, and the amount you should leave for tip. @done (14-03-16 16:42)
+ ✔ Your script should have a main() routine. @done (14-03-16 16:42)
+ ✔ You can post your completed project to Github or Gist. Make sure to let your mentor know you’ve completed the project, and share the code. @done (14-03-16 16:42)
