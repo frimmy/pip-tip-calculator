@@ -4,14 +4,25 @@ import sys
 def main():
 	# calculate_meal_costs(argv[])
 	base_info = {}
+	
 	try:
-		base_info = dict(base_meal=float(sys.argv[1]), base_tax=sys.argv[2],
-					base_tip=sys.argv[3])
+		base_info = dict(base_meal=float(sys.argv[1]), base_tax=float(sys.argv[2]),
+					base_tip=float(sys.argv[3]))
+		
 	except ValueError:
 		print "Sorry, you must supply numbers for all imput parameters to this script. Try again."
-		base_info['base_meal'] = float(raw_input("Enter base meal cost: ")) 
-		base_info['base_tax'] = float(raw_input("Enter base tax percentage as a decimal: "))
-		base_info['base_tip'] = float(raw_input("Enter base tip percentage as a decimal: "))
+
+		while True:
+			try:
+				base_info['base_meal'] = float(raw_input("Enter base meal cost: ")) 
+				base_info['base_tax'] = float(raw_input("Enter base tax percentage as a decimal: "))
+				base_info['base_tip'] = float(raw_input("Enter base tip percentage as a decimal: "))
+				break
+			except ValueError:
+				print "Sorry, you must supply numbers for all imput parameters to this script. Try again."
+
+				
+
 	
 		
 	meal_info = calculate_meal_costs(base_info['base_meal'], base_info['base_tax'],
